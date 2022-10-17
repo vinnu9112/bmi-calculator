@@ -19,21 +19,22 @@ let calcBmi = (e) => {
   if (weight === 0 || height === 0) {
     alert('Please enter a valid weight and height')
   } else {
-    let bmi = (weight / (height * height))
+    let bmi = (weight / ((height/100) * (height/100)))
     setBmi(bmi.toFixed(1))
+    //set message
+
+    if (bmi < 18.5) {
+      setMessage('You are underweight')
+    }
+    else if (bmi>= 18.5 && bmi<25) {
+      setMessage('You have a healthy weight')
+    }
+    else{
+      setMessage('You are overweight')
+    }
   }
   
-  //set message
-  if (bmi < 18.5) {
-    setMessage('You are underweight')
-  }
-  else if (bmi>= 18.5 && bmi<25) {
-    setMessage('You have a healthy weight')
-  }
-  else{
-    setMessage('You are overweight')
-  }
-
+  
   //image based on calculations
 }
 let imgSrc;
@@ -43,7 +44,7 @@ if (bmi < 1) {
 } else {
   if(bmi < 18.5) {
     imgSrc = require('../src/assets/underweight.png')
-  } else if (bmi >= 18.5 && bmi < 25) {
+  } else if (bmi < 25) {
     imgSrc = require('../src/assets/healthy.png')
   } else {
     imgSrc = require('../src/assets/overweight.png')
