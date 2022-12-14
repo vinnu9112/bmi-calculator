@@ -1,1 +1,3 @@
-This app calculates body mass index for men to know whether the weight they are having is a healthy one, below the required weight or above it.
+Body Mass Index Calculator can help you learn what this measurement means and how it relates to your health and fitness.
+
+This is a fully responsive website created using ReactJS.
